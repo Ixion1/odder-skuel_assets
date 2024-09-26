@@ -1,4 +1,4 @@
-let mySprite = sprites.create(img`
+let Emil = sprites.create(img`
     . . . . . . . . . . . . . . 
     . . . . f f f f f f . . . . 
     . . . f 5 5 5 5 5 5 f . . . 
@@ -16,11 +16,29 @@ let mySprite = sprites.create(img`
     . . f f c c f f c c f f . . 
     . . . . f f . . f f . . . . 
     `, SpriteKind.Player)
-controller.moveSprite(mySprite)
+controller.moveSprite(Emil)
 scene.setBackgroundColor(1)
+let Oliver = sprites.create(img`
+    . . . . f f f f . . . . 
+    . . f f f f f f f f . . 
+    . f f e f e e f e f f . 
+    f f f f e e e e f f f f 
+    f f f e e e e e e f f f 
+    f f f e e e e e e f f f 
+    f e e 4 4 e e 4 4 e e f 
+    f 4 4 b f 4 4 f b 4 4 f 
+    f e d 1 f d d f 1 d e f 
+    . f e d d d d d d e f . 
+    . f f e 4 4 4 4 e f f . 
+    e 4 f d b b b b d f 4 e 
+    4 d f b b b b b b f d 4 
+    4 4 f c c c c c c f 4 4 
+    . . . f f f f f f . . . 
+    . . . f f . . f f . . . 
+    `, SpriteKind.Enemy)
 game.onUpdate(function () {
     if (controller.right.isPressed()) {
-        mySprite.setImage(img`
+        Emil.setImage(img`
             . . . . . f f f f f . . . . 
             . . . . f 5 5 5 5 5 f . . . 
             . . . f 5 5 5 5 5 5 5 f . . 
@@ -35,12 +53,12 @@ game.onUpdate(function () {
             . . . f 4 d d e 6 6 6 f . . 
             . . . f e d d e 6 6 6 f . . 
             . . . f b e e c c c c f . . 
-            . . . f f b c c c f c f . . 
-            . . . . . f f c c f f . . . 
+            . . . f f b c c c c f . . . 
+            . . . . . f f c c f . . . . 
             `)
     }
     if (controller.down.isPressed()) {
-        mySprite.setImage(img`
+        Emil.setImage(img`
             . . . . . . . . . . . . . . 
             . . . . f f f f f f . . . . 
             . . . f 5 5 5 5 5 5 f . . . 
@@ -60,7 +78,7 @@ game.onUpdate(function () {
             `)
     }
     if (controller.left.isPressed()) {
-        mySprite.setImage(img`
+        Emil.setImage(img`
             . . . . f f f f f . . . . . 
             . . . f 5 5 5 5 5 f . . . . 
             . . f 5 5 5 5 5 5 5 f . . . 
@@ -75,12 +93,12 @@ game.onUpdate(function () {
             . . f 6 6 6 e d d 4 f . . . 
             . . f 6 6 6 e d d e f . . . 
             . . f c c c c e e b f . . . 
-            . . f c f c c c b f f . . . 
-            . . . f f c c f f . . . . . 
+            . . . f c c c c b f f . . . 
+            . . . . f c c f f . . . . . 
             `)
     }
     if (controller.up.isPressed()) {
-        mySprite.setImage(img`
+        Emil.setImage(img`
             . . . . . f f f f . . . . . 
             . . . f f 5 5 5 5 f f . . . 
             . . f d 5 5 5 5 5 5 d f . . 
